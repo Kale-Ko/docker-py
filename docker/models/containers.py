@@ -402,6 +402,7 @@ class Container(Model):
             timeout (int): Number of seconds to try to stop for before killing
                 the container. Once killed it will then be restarted. Default
                 is 10 seconds.
+            signal (str or int): The signal to send. Defaults to ``SIGTERM``
 
         Raises:
             :py:class:`docker.errors.APIError`
@@ -445,6 +446,7 @@ class Container(Model):
         Args:
             timeout (int): Timeout in seconds to wait for the container to
                 stop before sending a ``SIGKILL``. Default: 10
+            signal (str or int): The signal to send. Defaults to ``SIGTERM``
 
         Raises:
             :py:class:`docker.errors.APIError`
